@@ -39,9 +39,14 @@ function newGame() {
 
 newGame();
 
+
+
+
+
 // A function to make a random number between 19-120
 function valueToMatchFunction() {
 	return Math.floor(Math.random() * 102) + 19;
+	$("#scoreToMatch").html(valueToMatch);
 }
 
 
@@ -69,6 +74,21 @@ $("#yellowGem").click(function() {
 
 
 
+
+
+
+// Then, a function to write sumOfGuesses to the page.
+function sumOfGuesses() {
+	$("#currentScore").html(sumOfGuesses);
+};
+
+sumOfGuesses();
+
+
+
+
+
+
 // Function to get me the random value assigned to the crystals. I need to make this only run once, until the function newGame is called.  Right now, it will do this every single time that one of those divs is clicked.
 function randomBlueGemValue() {
 	blueGemValue = Math.floor(Math.random() * 12) + 1;
@@ -92,16 +112,21 @@ function randomYellowGemValue() {
 
 
 
+
+
+
 // Function to add points to wins or losses
 
 if (sumOfGuesses === valueToMatch) {
 	wins++;
+	$("#wins").prepend(wins);
 	$("#wins").append("You won! Congratulations!");
 	newGame();
 }
 
 else if (sumOfGuesses > valueToMatch) {
 	losses++;
+	$("#losses").prepend(losses);
 	$("#losses").append("You lost! Sorry!");
 	newGame();
 }
