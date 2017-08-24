@@ -1,0 +1,17 @@
+#statsDiv h1, h2 {
+	text-align: center;
+}
+
+@media screen and (max-width: 990px) {
+	#crystalsDiv img {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#crystalsDiv img {
+		width: 100px;
+		height: 100px;
+	}
+}
