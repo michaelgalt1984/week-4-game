@@ -78,11 +78,11 @@ $("#yellowGem").click(function() {
 
 
 // Then, a function to write sumOfGuesses to the page.
-function sumOfGuesses() {
+function sumOfGuessesFunction() {
 	$("#currentScore").html(sumOfGuesses);
 };
 
-sumOfGuesses();
+sumOfGuessesFunction();
 
 
 
