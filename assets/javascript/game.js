@@ -7,15 +7,15 @@ $(document).ready(function() {
 // I need these to get written into the appropriate p tags in my html
 var wins = 0;
 var losses = 0;
-var sumOfGuesses = sumOfGuessesCalculator();
+var sumOfGuesses = 0;
 var valueToMatch = valueToMatchFunction();
 
 
 // Variables to store the random values of the gems. They receive the values from the functions.
-var blueGemValue = randomBlueGemValue();
-var redGemValue = randomRedGemValue();
-var greenGemValue = randomGreenGemValue();
-var yellowGemValue = randomYellowGemValue();
+var blueGemValue;
+var redGemValue;
+var greenGemValue;
+var yellowGemValue;
 
 
 
@@ -27,73 +27,83 @@ $("#gameStartRestart").click(function() {
 	$(this).newGame();
 });
 
-function newGame(argument) {
-	var wins = 0;
-	var losses = 0;
-	var sumOfGuesses = 0;
+function newGame() {
+	sumOfGuesses = 0;
+	valueToMatchFunction();
+	randomBlueGemValue();
+	randomRedGemValue();
+	randomGreenGemValue();
+	randomYellowGemValue();
+	console.log(valueToMatch);
 }
 
+newGame();
 
 // A function to make a random number between 19-120
 function valueToMatchFunction() {
-    return Math.floor(Math.random() * 102) + 19;
-  }
+	return Math.floor(Math.random() * 102) + 19;
+}
 
 
 
 // Then, a function which will assign a click handler to each individual image div.
 $("#blueGem").click(function() {
-	$(this).randomBlueGemValue();
+	sumOfGuesses = blueGemValue + sumOfGuesses;
+	console.log(sumOfGuesses);
 });
 
 $("#redGem").click(function() {
-	$(this).randomBlueGemValue();
+	sumOfGuesses = redGemValue + sumOfGuesses;
+	console.log(sumOfGuesses);
 });
 
 $("#greenGem").click(function() {
-	$(this).randomBlueGemValue();
+	sumOfGuesses = greenGemValue + sumOfGuesses;
+	console.log(sumOfGuesses);
 });
 
 $("#yellowGem").click(function() {
-	$(this).randomBlueGemValue();
+	sumOfGuesses = yellowGemValue + sumOfGuesses;
+	console.log(sumOfGuesses);
 });
 
 
 
 // Function to get me the random value assigned to the crystals. I need to make this only run once, until the function newGame is called.  Right now, it will do this every single time that one of those divs is clicked.
 function randomBlueGemValue() {
-	Math.floor(Math.random() * 12) + 1,
+	blueGemValue = Math.floor(Math.random() * 12) + 1;
+	console.log(blueGemValue);
 };
 
 function randomRedGemValue() {
-	Math.floor(Math.random() * 12) + 1,
+	redGemValue = Math.floor(Math.random() * 12) + 1;
+	console.log(redGemValue);
 };
 
 function randomGreenGemValue() {
-	Math.floor(Math.random() * 12) + 1,
+	greenGemValue = Math.floor(Math.random() * 12) + 1;
+	console.log(greenGemValue);
 };
 
 function randomYellowGemValue() {
-	Math.floor(Math.random() * 12) + 1,
+	yellowGemValue = Math.floor(Math.random() * 12) + 1;
+	console.log(yellowGemValue);
 };
 
-
-
-
-// Function to add all the values captured in the clicks on the individual images.
-function sumOfGuessesCalculator(sumOfGuesses) {
-	blueGemValue + redGemValue + greenGemValue + yellowGemValue,
-};
 
 
 // Function to add points to wins or losses
 
 if (sumOfGuesses === valueToMatch) {
 	wins++;
+	$("#wins").append("You won! Congratulations!");
+	newGame();
 }
 
 else if (sumOfGuesses > valueToMatch) {
 	losses++;
+	$("#losses").append("You lost! Sorry!");
+	newGame();
 }
 
 });

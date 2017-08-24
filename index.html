@@ -3,88 +3,93 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-        <script src="assets/javascript/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="assets/javascript/game.js"></script>
-    </head>
-    <body>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script src="assets/javascript/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <script src="assets/javascript/game.js"></script>
+</head>
+<body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Crystal Collector</h1>
-        <p>Welcome to Crystal Collector!  You see four crystals displayed below.  Each of those crystals is assigned a different value, which you can't discover until you click on each crystal... Now, pay attention, because while the counter will show you how much that crystal is worth (by increasing by the amount set to that crystal), you will have to remember the value of each individual crystal...</p>
+            <![endif]-->
+            
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+              <div class="container">
+                <h1>Crystal Collector</h1>
+                <p>Welcome to Crystal Collector!  You see four crystals displayed below.  Each of those crystals is assigned a different value, which you can't discover until you click on each crystal... Now, pay attention, because while the counter will show you how much that crystal is worth (by increasing by the amount set to that crystal), you will have to remember the value of each individual crystal...</p>
 
-        <br>
+                <br>
 
-        <p>Why must you remember how much each crystal is worth?  Because your goal is to match the value displayed as the target value. If you exceed that value... you lose! Each time you match the value, you earn a point in the "wins column"... and each time you exceed the value, you earn a point in the losses column.</p>
+                <p>Why must you remember how much each crystal is worth?  Because your goal is to match the value displayed as the target value. If you exceed that value... you lose! Each time you match the value, you earn a point in the "wins column"... and each time you exceed the value, you earn a point in the losses column.</p>
 
-        <br>
+                <br>
 
-        <p>The value to match changes every game, as do the values of the crystals, so you can't use the old maths to do the new tricks!  Sometimes you just won't be able to win... because if the crystal values can't be added up to equal the target value... you will never hit it square on the head.</p>
+                <p>The value to match changes every game, as do the values of the crystals, so you can't use the old maths to do the new tricks!  Sometimes you just won't be able to win... because if the crystal values can't be added up to equal the target value... you will never hit it square on the head.</p>
 
-        <br>
+                <br>
 
-        <p>Good luck and have fun!</p>
+                <p>Good luck and have fun!</p>
 
-        <p><a class="btn btn-primary btn-lg" role="button" id="gameStartRestart">New Game! &raquo;</a></p>
-      </div>
-    </div>
+                <p><a class="btn btn-primary btn-lg" role="button" id="gameStartRestart">New Game! &raquo;</a></p>
+              </div>
+            </div>
 
-    <div class="container" id="statsDiv">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-xs-4">
-          <h2>Score to Match</h2>
-          <p id="scoreToMatch"></p>
-        </div>
-        <div class="col-xs-4">
-          <h2>Current Score</h2>
-          <p id="currentScore"></p>
-       </div>
-        <div class="col-xs-4">
-          <h2>Wins/Losses</h2>
-          <p id="wins"></p>
-          <p id="losses"></p>
-        </div>
-      </div>
-    </div> <!-- /container -->
+            <div class="container" id="statsDiv">
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-xs-4">
+                  <h2>Score to Match</h2>
+                  <p id="scoreToMatch"></p>
+                </div>
+                <div class="col-xs-4">
+                  <h2>Current Score</h2>
+                  <p id="currentScore"></p>
+                </div>
+                <div class="col-xs-4">
+                  <h2>Wins/Losses</h2>
+                  <p id="wins"></p>
+                  <p id="losses"></p>
+                </div>
+              </div>
+            </div> <!-- /container -->
 
-    <hr>
+            <hr>
 
-    <div class="container" id="crystalsDiv">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-xs-3" id="blueGem">
-          <img src="assets/images/Topaz.png">
-        </div>
+            <div class="container" id="crystalsDiv">
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-xs-3" id="blueGem">
+                  <img src="assets/images/Topaz.png">
+                </div>
 
-        <div class="col-xs-3" id="redGem">
-          <img src="assets/images/redGem.png">
-       </div>
+                <div class="col-xs-3" id="redGem">
+                  <img src="assets/images/redGem.png">
+                </div>
 
-        <div class="col-xs-3" id="greenGem">
-          <img src="assets/images/greenGem.png">
-        </div>
+                <div class="col-xs-3" id="greenGem">
+                  <img src="assets/images/greenGem.png">
+                </div>
 
-        <div class="col-xs-3" id="yellowGem">
-          <img src="assets/images/Citrine2.png">
-        </div>
-      </div>
-    </div> <!-- /container -->         
-    </body>
-</html>
+                <div class="col-xs-3" id="yellowGem">
+                  <img src="assets/images/Citrine2.png">
+                </div>
+              </div>
+            </div> <!-- /container -->         
+          </body>
+          </html>
