@@ -34,8 +34,14 @@ function newGame(argument) {
 }
 
 
+// A function to make a random number between 19-120
+function valueToMatchFunction() {
+    return Math.floor(Math.random() * 102) + 19;
+  }
 
-// First, a function which will assign a click handler to each individual image div.
+
+
+// Then, a function which will assign a click handler to each individual image div.
 $("#blueGem").click(function() {
 	$(this).randomBlueGemValue();
 });
